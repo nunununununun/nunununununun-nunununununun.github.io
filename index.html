@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .bg{
+            flex: 2;
+            width: 100vh;
+            height: 70vh;
+            background: url(./img/bg.hdslb.webp) no-repeat;
+            background-size: cover;
+            color: aliceblue;
+            font-size: 5rem;
+            font-weight: 100;
+            padding-top: 15%;
+        }
+        #quanju{
+            display: flex;
+            
+        }
+        .bb{
+            flex: 1;
+            border: 1px black solid;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        #quan{
+            width: auto;
+            height: auto;
+            border: 1px black solid;
+
+        }
+        .thumbnail{
+            border: 1px rgb(124, 124, 117) solid;
+            box-shadow: black 0px 0px 5px 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="quanju">
+    <div class="bg">
+        <p id="pp" class="text-center"> <span >|</span></p>
+    </div>
+    <div class="bb"> </div>
+</div>
+<div id="quan">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="img/bg1.jj20.webp" alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="img/bg1.jj20.webp" alt="...">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="img/bg1.jj20.webp" alt="...">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="img/bg1.jj20.webp" alt="...">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+    
+</body>
+<script>
+    let pp = document.getElementById('pp'); 
+    let nub = ['江','河','汇','海',',','积','石','成','山'];
+    let nm =''
+    let ne =0
+    const time = setInterval(() => {
+        if(ne > nub.length-2){
+            clearInterval(time)
+        }
+        nm += nub[ne]
+        pp.innerText = nm
+        ne++ 
+    }, 1000);
+    
+    </script>
+</html>
