@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <title>毳的笔记-Mysql</title>
+    <style>
+        nav {
+            font-size: 3rem;
+            white-space: nowrap; 
+        }
+       .box1{
+           flex: 1;
+           display: flex;
+           /* flex-direction: column; */
+          
+           height: 15rem;
+           width: auto;
+           font-size: 5rem;
+       }
+       .box1 span{
+         
+           margin-top: 4rem;
+           margin-left: -2rem;
+        transform: scale(2);
+       }
+       .box2{
+           margin-top: 5rem;
+           display: flex;
+           flex: 3;
+           width: 100%;
+           height: auto;
+           /* border: 1px black solid; */
+       }
+       body{
+           background-color: rgb(177, 132, 219);
+       }
+       
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse .navbar-right ">
+        <div><a href="index.html"><span class="glyphicon glyphicon-arrow-left"></span></a></div>
+      </nav>
+      <!-- 16:9 aspect ratio
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="..."></iframe>
+  </div> -->
+  <div class="box1">
+      <div style="flex: 1; text-align: center; background-color: rgb(124, 165, 156); border-radius: 5%;">
+         <a href="https://www.mysql.com/"><span class="glyphicon glyphicon-cloud-download  " ></span></a>
+      </div>
+      <div style="flex: 1; text-align: center ; margin-top: 2rem; margin-right: 2rem; ;">
+          <a href="https://www.mysqlzh.com/">Mysql官方文档</a>
+      </div>
+
+  </div>
+  <div class="box2">
+      <div style="flex: 1;"></div>
+      <div style="flex: 2;border: 1px black solid">
+        <br>
+        <br>
+        <img src="img/logo.jfif">
+        <p>总结一下mysql的基础用法<p>
+        <h1> 概述</h1>
+	<p>MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。
+MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。
+MySQL所使用的 SQL 语言是用于访问数据库的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型和大型网站的开发都选择 MySQL 作为网站数据库。</p>
+<h2>数据类型</h2>
+<table class="table table-hover">
+    <tbody>
+    <tr>
+        <td>char</td>
+        <td>String(0~255)</td>
+    </tr>
+    <tr>
+        <td>varchar</td>
+        <td>String(0~255)</td>
+    </tr>
+    <tr>
+        <td>inytext</td>
+        <td>String(0~255)</td>
+    </tr>
+    <tr>
+        <td>text</td>
+        <td>String(0~65536)</td>
+    </tr>
+    <tr>
+        <td>blob</td>
+        <td>String(0~65535)</td>
+    </tr>
+    <tr>
+        <td>mediumtext</td>
+        <td>String(0~16777215)</td>
+    </tr>
+    <tr>
+        <td>mediumblob</td>
+        <td>String(0~16777215)</td>
+    </tr>
+    <tr>
+        <td>longblob</td>
+        <td>String(0~4294967295)</td>
+    </tr>
+    <tr>
+        <td>longtext</td>
+        <td>String(0~4294967295)</td>
+    </tr>
+    <tr>
+        <td>tinyint</td>
+        <td>Integer(-128~127)</td>
+    </tr>
+    <tr>
+        <td>smallint</td>
+        <td>Integer(-32768~32767)</td>
+    </tr>
+    <tr>
+        <td>mediumint</td>
+        <td>Integer(-8388608~8388607)</td>
+    </tr>
+    <tr>
+        <td>int</td>
+        <td>integer(-214847668~214847667)</td>
+    </tr>
+    <tr>
+        <td>bigint</td>
+        <td>Integer(-9223372036854775808~9223372036854775807)</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>decimal(精确到23位小数)</td>
+    </tr>
+    <tr>
+        <td>double</td>
+        <td>decimal(24~54位小数)</td>
+    </tr>
+    <tr>
+        <td>decimal</td>
+        <td>将double转储为字符串形式</td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td>YYYY-MM-DD</td>
+    </tr>
+    <tr>
+        <td>datetime</td>
+        <td>YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+        <td>timestamp</td>
+        <td>YYYYMMDDHHMMSS</td>
+    </tr>
+    <tr>
+        <td>time</td>
+        <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+        <td>enum</td>
+        <td>选项值之一</td>
+    </tr>
+    <tr>
+        <td>set</td>
+        <td>选项值子集/td>
+    </tr>
+</tbody>
+
+  </table>
+
+
+
+<h1>常用sql语句</h1>
+<pre>
+-- 创建库
+create database db1;
+-- 创建库是否存在，不存在则创建
+create database if not exists db1;
+-- 查看所有数据库
+show databases;
+-- 查看某个数据库的定义信息 
+show create database db1; 
+-- 修改数据库字符信息
+alter database db1 character set utf8; 
+-- 删除数据库
+drop database db1; 
+
+create table student(
+    id int,
+    name varchar(32),
+    age int ,
+    score double(4,1),
+    birthday date,
+    insert_time timestamp
+);
+ 
+-- 查看表结构
+desc 表名;
+-- 查看创建表的SQL语句
+show create table 表名;
+-- 修改表名
+alter table 表名 rename to 新的表名;
+-- 添加一列
+alter table 表名 add 列名 数据类型;
+-- 删除列
+alter table 表名 drop 列名;
+-- 删除表
+drop table 表名;
+drop table  if exists 表名 ;
+
+        </pre>
+        
+    
+    
+    </div>
+      <div style="flex: 1;"></div>
+
+  </div>
+  
+    
+</body>
+</html>
