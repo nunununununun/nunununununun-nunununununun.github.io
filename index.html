@@ -27,12 +27,30 @@
             
         }
         .bb{
+          display: flex;
             flex: 1;
-            border: 1px black solid;
+            /* border: 1px black solid; */
+            flex-direction: column;
+        }
+        .oi{
+          flex: 1;
+          padding-top: 5%;
+          background-color: rgb(212, 206, 197);
+          font-size: 5rem;
+          padding-left: 3%;
+        }
+        .oi:hover{
+          background-color: rgb(249, 251, 253);
+          box-shadow: black 0px 0px 10px 10px;
         }
         body{
             display: flex;
             flex-direction: column;
+        }
+        .bb img{
+          border-radius: 10%;
+          width: 15%;
+          height: auto;
         }
         #quan{
             width: auto;
@@ -40,6 +58,7 @@
             border: 1px black solid;
 
         }
+        
         .thumbnail{
             border: 1px rgb(124, 124, 117) solid;
             box-shadow: black 0px 0px 5px 0px;
@@ -48,6 +67,24 @@
     .bb {
         display: none;
     }
+}
+#quanju div{
+  margin-left: 15px;
+}
+.row{
+  border:0px;
+}
+.thumbnail{
+  overflow: hidden;
+}
+.thumbnail:hover img{
+  z-index:-10;
+  transform: scale(1.08);
+  transition: 1s ease;
+}
+.thumbnail img{
+  width: 608px;
+  height: 380px;
 }
 
 
@@ -58,13 +95,23 @@
     <div class="bg">
         <p id="pp" class="text-center"> <span >|</span></p>
     </div>
-    <div class="bb"> </div>
+    <div class="bb"> 
+      <div class="oi"><img src='./img/less.jfif'>less</div>
+      <div class="oi"><img src='./img/vue.jfif'>vue</div>
+      <div class="oi"><img src='./img/axios.jfif'>axios</div>
+      <div class="oi"><img src='./img/bootstrap.png'>bootstrap</div>
+      <div class="oi"><img src='./img/git.jfif'>git</div>
+      
+      
+    </div>
 </div>
+<br>
+<br>
 <div id="quan">
     <div class="row">
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="img/bg.jj20.webp" alt="...">
+            <img src="img/mysq.jfif" alt="...">
             <div class="caption">
               <h3>标签</h3>
               <p>...</p>
