@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 修改页签icon logo -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.jfif"></link>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <title>毳的笔记</title>
+    <style>
+        body{
+            background-color: rgb(183, 128, 235);
+        }
+        nav {
+            font-size: 3rem;
+            white-space: nowrap; 
+        }
+        #box1{
+            display: flex;
+            font-size: 5rem;
+           
+            text-align: center;
+        }
+        #box1 div{
+         flex: 1;
+        }
+        .box2{
+            display: flex;
+         
+        }
+        .box2 div{
+            flex: 1;
+            height: auto;
+        }
+        #box1 span{
+            margin-right: 5rem;
+            transform: scale(1.5);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse .navbar-right ">
+        <div><a href="index.html"><span class="glyphicon glyphicon-arrow-left"></span></a></div>
+      </nav>
+      <div id="box1">
+        <div >
+        </div>
+        <div  style="flex:2;  text-align: center;">
+            <span class="glyphicon glyphicon-hand-right"></span><a href="https://www.axios-http.cn/docs/intro" class="col-md-offset-4 col-lg-offset-4col-xl-offset-4"  style=" font-size: 5rem; width: auto;">axios官方文档</a>
+        </div>
+        <div >
+        </div>
+      </div>
+      <div class="box2">
+          <div></div>
+          <div style="flex:3 ;border: black 1px solid;">
+            <img src="img/logo.jfif">
+        <h1>Axios概述</h1>
+        <p>
+            &nbsp&nbsp&nbsp&nbspAxios 是一个基于 promise 的 HTTP 库，简单的讲就是可以发送get、post请求。说到get、post，大家应该第一时间想到的就是Jquery吧，毕竟前几年Jquery比较火的时候，大家都在用他。但是由于Vue、React等框架的出现，Jquery也不是那么吃香了。也正是Vue、React等框架的出现，促使了Axios轻量级库的出现，因为Vue等，不需要操作Dom，所以不需要引入Jquery.js了。
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp 在特性里面已经有提到，浏览器发送请求，或者Node.js发送请求都可以用到Axios。像Vue、React、Node等项目就可以使用Axios，如果你的项目里面用了Jquery，此时就不需要多此一举了，jquery里面本身就可以发送请求。
+        </p>
+        <h1>Axiso安装</h1>
+        <h4>
+            模块安装
+        </h4>
+        <p>//npm install axios</p>
+        <h4>
+            script引入
+        </h4>
+        <p>src="https://unpkg.com/axios/dist/axios.min.js"</p>
+        <h1>用法</h1>
+        <p><span style="font-size: 3rem; ">他爹==></span><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" style="font-size: 2rem;">XMLHttpRequest</a></p>
+       
+        <h4>GET</h4>
+        <pre>
+            // 为给定 ID 的 user 创建请求
+            axios.get('/user?ID=12345')
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            
+            // 上面的请求也可以这样做
+            axios.get('/user', {
+                params: {
+                  ID: 12345
+                }
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+
+        </pre>
+        <h4>POST</h4>
+        <pre>
+            axios.post('/user', {
+                firstName: 'Fred',
+                lastName: 'Flintstone'
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              //另一种写法
+              axios.post('/user', {
+                firstName: 'Fred',
+                lastName: 'Flintstone'
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+
+
+        </pre>
+        <h4>并发</h4>
+        <pre>
+            function getUserAccount() {
+                return axios.get('/user/12345');
+              }
+              
+              function getUserPermissions() {
+                return axios.get('/user/12345/permissions');
+              }
+              
+              axios.all([getUserAccount(), getUserPermissions()])
+                .then(axios.spread(function (acct, perms) {
+                  // 两个请求现在都执行完成
+                }));
+
+        </pre>
+        <h4>API</h4>
+        <pre>
+            // 发送 POST 请求
+            axios({
+              method: 'post',
+              url: '/user/12345',
+              data: {
+                firstName: 'Fred',
+                lastName: 'Flintstone'
+              }
+            });
+            // 获取远端图片
+            axios({
+              method:'get',
+              url:'http://bit.ly/2mTM3nY',
+              responseType:'stream'
+            })
+              .then(function(response) {
+              response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+            });
+            axios(url[, config])
+            // 发送 GET 请求（默认的方法）
+            axios('/user/12345');
+
+        </pre>
+        
+        
+        </div>
+          <div></div>
+
+      </div>
+
+    
+</body>
+</html>
