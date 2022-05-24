@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 修改页签icon logo -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.jfif"></link>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <title>毳的笔记</title>
+    <style>
+        body{
+            background-color: rgb(183, 128, 235);
+        }
+        nav {
+            font-size: 3rem;
+            white-space: nowrap; 
+        }
+        #box1{
+            display: flex;
+            font-size: 5rem;
+           
+            text-align: center;
+        }
+        #box1 div{
+         flex: 1;
+        }
+        .box2{
+            display: flex;
+         
+        }
+        .box2 div{
+            flex: 1;
+            height: auto;
+        }
+        #box1 span{
+            margin-right: 5rem;
+            transform: scale(1.5);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse .navbar-right ">
+        <div><a href="index.html"><span class="glyphicon glyphicon-arrow-left"></span></a></div>
+      </nav>
+      <div id="box1">
+        <div >
+        </div>
+        <div  style="flex:2;  text-align: center;">
+            <span class="glyphicon glyphicon-hand-right"></span><a href="https://git-scm.com/" class="col-md-offset-4 col-lg-offset-4col-xl-offset-4"  style=" font-size: 5rem; width: auto;">git官方下载</a>
+        </div>
+        <div >
+        </div>
+      </div>
+      <div class="box2">
+          <div></div>
+          <div style="flex:3 ;border: black 1px solid;">
+            <img src="img/logo.jfif">    
+          <div>
+              <h1>
+                  Git概述：
+              </h1>
+              <p>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Git是分布式的版本库。
+
+                  Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。
+              </p>
+              <h1>Git 的安装</h1>
+              <h3>Linux安装：</h3>
+              <pre>
+                $ sudo yum install git-all
+                $ git --version
+              </pre>
+              <h3>windos安装：</h3>
+              <p>官网下载msysGit：https://git-scm.com/</p>
+          </div>
+          <h1>git的使用</h1>
+          <p>Windows文件夹下右击，点击Git Bash 进入终端</p>
+          <img src="./img/屏幕截图 2022-05-24 085827.png">
+          <br>
+          <img src="./img/屏幕截图 2022-05-24 090009.png">
+          <h5>创建版本库</h5>
+          <p>
+            新建一个文件夹
+            打开Git Bash<br>
+            $git init//初始化本地仓库<br>
+            $git config --global user.name "<用户名>"//设置用户名<br>
+            $git config --global user.email "<电子邮件>"//b、设置用户邮箱<br>
+            $git config --list //查看是否成功 <br>
+            $git add 文件名//添加文件至暂存区可以用.或-A表示添加全部文件<br>
+            $git commit -m "提交注释"//告诉git提交<br>
+            $git push //提交到远程仓库<br>
+            -------------------------------------------<br>
+            版本回退：$git reet --hard 版本号
+          </p>
+          <h2>常用命令</h2>
+          <pre>
+            mkdir：         XX (创建一个空目录 XX指目录名)
+
+            pwd：          显示当前目录的路径。
+         
+            git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+         
+            git add XX       把xx文件添加到暂存区去。
+         
+            git commit –m “XX”  提交文件 –m 后面的是注释。
+         
+            git status        查看仓库状态
+         
+            git diff  XX      查看XX文件修改了那些内容
+         
+            git log          查看历史记录
+         
+            git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本
+         
+                                 (如果想回退到100个版本，使用git reset –hard HEAD~100 )
+         
+            cat XX         查看XX文件内容
+         
+            git reflog       查看历史记录的版本号id
+         
+            git checkout -- XX  把XX文件在工作区的修改全部撤销。
+         
+            git rm XX          删除XX文件
+         
+            git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+         
+            git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+         
+            git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+         
+            git checkout –b dev  创建dev分支 并切换到dev分支上
+         
+            git branch  查看当前所有的分支
+         
+            git checkout master 切换回master分支
+         
+            git merge dev    在当前的分支上合并dev分支
+         
+            git branch –d dev 删除dev分支
+         
+            git branch name  创建分支
+         
+            git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+         
+            git stash list 查看所有被隐藏的文件列表
+         
+            git stash apply 恢复被隐藏的文件，但是内容不删除
+         
+            git stash drop 删除文件
+         
+            git stash pop 恢复文件的同时 也删除文件
+         
+            git remote 查看远程库的信息
+         
+            git remote –v 查看远程库的详细信息
+         
+            git push origin master  Git会把master分支推送到远程库对应的远程分支上
+          </pre>
+          
+      </div>
+      <div></div>
+
+    
+</body>
+</html>
