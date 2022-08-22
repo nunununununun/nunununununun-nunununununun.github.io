@@ -14,7 +14,8 @@
     <title>毳的笔记</title>
     <style>
         body{
-            background-color: rgb(183, 128, 235);
+            
+            background-color: rgb(185, 148, 220);
         }
         nav {
             font-size: 3rem;
@@ -61,7 +62,11 @@
       <div class="box2">
           <div></div>
           <div style="flex:3 ;border: black 1px solid;">
-            <img src="img/logo.jfif">    
+            <div style="flex: 1;"></div>
+            <div style="flex: 1;">
+                <img src="img/logo.jfif" > 
+            </div> 
+            <div style="flex: 1;"></div>  
           <div>
               <h1>
                   Git概述：
@@ -163,9 +168,22 @@
          
             git push origin master  Git会把master分支推送到远程库对应的远程分支上
           </pre>
+          <h1>拉取远程仓库</h1>
+          <p>1.新建一个文件夹</p>
+          <p>2.鼠标右键打开Gitbash</p>
+          <p>3. 输入init初始化git</p>
+          <p>4.git remote add origin https://github.com/xxx.github.io.git-----链接远程仓库</p>
+          <p>5. git fetch origin master ----------拉取远程分支 </p>
+          <p>6. git checkout -b boke（新建本地分支名字） origin/master（远程分支名）-----------创建本地分支并切换</p>
+          <p>7.git pull origin master--------------------将远程分支内容拉取到本地</p>
+          <p></p>
+
+
+
+      </div>
+      <div>
           
       </div>
-      <div></div>
 
     
 </body>
